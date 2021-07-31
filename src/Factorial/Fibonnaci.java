@@ -2,6 +2,9 @@ package project;
 
 public class Fibonnaci {
 	
+	public static String name() {
+		return "Fibonnaci"; 
+	}
 	public static int iterative(int n) {
 		int ret = 1;
 		int prev1 = 0; 

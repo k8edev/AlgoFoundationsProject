@@ -1,6 +1,11 @@
 package project;
 
 public class GUIFactorial {
+	
+	public static String name() {
+		return "Factorial"; 
+	}
+	
 	public static int iterative(int num) {
         if (num < 0) {
             throw new IllegalArgumentException("Factorial function is only available for numbers greater than 0.");

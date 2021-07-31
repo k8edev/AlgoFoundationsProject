@@ -17,7 +17,8 @@ import javax.swing.*;
 
 public class GUI {
 
-	static List<Function> listOfFunctions; 
+	static List<Function> listOfFunctions;
+	static List<Class> packages; 
 	
 	public static void runGUI() throws InvocationTargetException {
 		JFrame frame = new JFrame("Recursive vs Iterative Runtime");
@@ -122,19 +123,21 @@ public class GUI {
 	}
 	
 	public static void setupFunctions() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-		Method method1 = Fibonnaci.class.getMethod("iterative", int.class);
-		Method method2 = Fibonnaci.class.getMethod("recursive", int.class);
-		Function fibonnaci = new Function(method1, method2,"Fibonnaci");
-		listOfFunctions.add(fibonnaci);
-		
-		Method method3 = GUIFactorial.class.getMethod("iterative", int.class);
-		Method method4 = GUIFactorial.class.getMethod("recursive", int.class);
-		Function factorial = new Function(method3, method4,"Factorial");
-		listOfFunctions.add(factorial);
+		for (int i = 0; i < packages.size(); i++) {
+			Method method1 = packages.get(i).getMethod("iterative", int.class);
+			Method method2 = packages.get(i).getMethod("recursive", int.class);
+			Method method3 = packages.get(i).getMethod("name");
+			String name = (String) method3.invoke(null);
+			Function func = new Function(method1, method2,name);
+			listOfFunctions.add(func);
+		}
 	}
 	
 	public static void main(String[] args) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		listOfFunctions = new ArrayList<Function>(); 	
+		packages = new ArrayList<Class>();
+		packages.add(Fibonnaci.class);
+		packages.add(GUIFactorial.class);
 		setupFunctions();
 		runGUI();
 	}
