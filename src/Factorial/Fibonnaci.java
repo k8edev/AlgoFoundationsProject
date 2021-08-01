@@ -5,10 +5,10 @@ public class Fibonnaci {
 	public static String name() {
 		return "Fibonnaci"; 
 	}
-	public static int iterative(int n) {
-		int ret = 1;
-		int prev1 = 0; 
-		int prev2 = 1;
+	public static double iterative(int n) {
+		double ret = 1;
+		double prev1 = 0; 
+		double prev2 = 1;
 		if (n == 0) {
 			ret = 0;
 		}
@@ -23,7 +23,7 @@ public class Fibonnaci {
 		return ret;
 	}
 	
-	public static int recursive(int n) {
+	public static double recursive(int n) {
 		if (n == 0) {
 			return 0;
 		}

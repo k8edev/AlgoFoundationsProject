@@ -85,12 +85,12 @@ public class GUI {
 	                	skip = true; 
 	                }
 	                if (skip == false) {
-	                	int iterAns = 0;
+	                	double iterAns = 0;
 	                	long iterDuration = 0; 
 	                	long recurDuration = 0; 
 	                	try {
 	                		long startTime = System.nanoTime();
-	                		iterAns = (int) i.getIterative().invoke(null, inputVal);
+	                		iterAns = (double) i.getIterative().invoke(null, inputVal);
 	                		long endTime = System.nanoTime();
 	                		iterDuration = endTime - startTime; 
 	                		
@@ -99,13 +99,13 @@ public class GUI {
 					    } 
 	                    try {
 	                    	long startTime = System.nanoTime();
-	                    	int recurAns = (int) i.getRecursive().invoke(null, inputVal);
+	                    	double recurAns = (double) i.getRecursive().invoke(null, inputVal);
 	                    	long endTime = System.nanoTime();
 	                    	recurDuration = endTime - startTime; 
 					    } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e1) {
 					    	e1.printStackTrace();
 					    }
-	                    outputAns.setText(String.valueOf(iterAns));
+	                    outputAns.setText(Double.toString(iterAns));
 	                    iterTime.setText(String.valueOf(iterDuration));
 	                    recurTime.setText(String.valueOf(recurDuration));
 	                 }
