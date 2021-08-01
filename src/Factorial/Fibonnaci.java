@@ -44,9 +44,22 @@ public class Fibonnaci {
 				System.out.println(recursive(i));
 				System.out.println(iterative(i));
 			}
-			else {
-				System.out.print(recursive(i) + ","); 
-			}
+		}
+		
+		// Collect runtime data
+		int maxInput = 50; 
+		long startTime, endTime, duration = 0; 
+		for (int i = 0; i < maxInput; i++) {
+			startTime = System.nanoTime(); 
+			iterative(i);
+			endTime = System.nanoTime(); 
+			duration = endTime - startTime; 
+			System.out.println("Input: " + i + " Iterative time: " + duration);
+			startTime = System.nanoTime(); 
+			recursive(i);
+			endTime = System.nanoTime(); 
+			duration = endTime - startTime; 
+			System.out.println("Input: " + i + " Recursive time: " + duration);
 		}
 	}
 }
