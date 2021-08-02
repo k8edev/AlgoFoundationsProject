@@ -1,4 +1,4 @@
-package project;
+package TowersOfHanoi;
 
 public class TowersOfHanoiRecursive {
 	/* keep track of the number of times moveDisc is recursively called */
