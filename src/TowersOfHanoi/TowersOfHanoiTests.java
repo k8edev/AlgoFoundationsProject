@@ -16,6 +16,7 @@ public class TowersOfHanoiTests {
         ArrayList<TowersOfHanoi> testParams = new ArrayList<>();
 
         testParams.add(new TowersOfHanoiIterative());
+        testParams.add(new TowersOfHanoiRecursive());
 
         return testParams;
     }
@@ -27,13 +28,18 @@ public class TowersOfHanoiTests {
     @Test
     public void towersOfHanoi_main() {
         /* Test bench */
-        int[] discs = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+        int[] discs = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,100};
         for(int i: discs) {
-            int answer = towersOfHanoi.numOfMoves(i);
+            int answer = towersOfHanoi.numOfMoves(i, false);
             System.out.println(" Discs " + i + " Moves " + answer);
             if (answer != (Math.pow(2,i)-1)) {
                 throw new RuntimeException(" Incorrect Output from Hanoi algorithm");
             }
         }
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void towersOfHanoi_throwsException_whenNotEnoughDisks() {
+       towersOfHanoi.numOfMoves(0, false);
     }
 }

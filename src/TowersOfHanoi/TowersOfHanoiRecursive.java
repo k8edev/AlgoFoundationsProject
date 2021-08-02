@@ -22,11 +22,11 @@ public class TowersOfHanoiRecursive implements TowersOfHanoi {
 	}
 	
 	/* helper function to count the numbers of times moveDisc is recursively called */
-	public int numOfMoves(int numDiscs) {
+	public int numOfMoves(int numDiscs, boolean printSteps) {
 		if (numDiscs < 1) {
 			throw new RuntimeException(" Invalid input, should be at least one disc");
 		}
-		moves = 0; 
+		moves = 0;
 		moveDisc(numDiscs,0,1,2);
 		return moves; 
 	}
