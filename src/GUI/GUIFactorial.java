@@ -1,4 +1,4 @@
-package project;
+package GUI;
 
 public class GUIFactorial {
 	
