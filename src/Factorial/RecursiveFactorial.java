@@ -5,6 +5,7 @@ package Factorial;
 * */
 public class RecursiveFactorial implements Factorial{
 
+    @Override
     public double findFactorial(double num) {
         if (num < 0) {
             throw new IllegalArgumentException("Factorial function is only available for numbers greater than 0.");
