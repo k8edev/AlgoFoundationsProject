@@ -1,5 +1,6 @@
 package Factorial;
 
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -65,7 +66,7 @@ public class FactorialTests {
     @Test
     public void findFactorial_ReturnsOne_IfNumberIsOne() {
         // Act
-        var result = factorial.findFactorial(1);
+        double result = factorial.findFactorial(1);
 
         // Assert
         assertEquals(1, result, precisionLoss);
@@ -74,7 +75,7 @@ public class FactorialTests {
     @Test
     public void findFactorial_Succeeds_IfNumberIsSmall() {
         // Act
-        var result = factorial.findFactorial(5);
+        double result = factorial.findFactorial(5);
 
         // Assert
         assertEquals(120, result, precisionLoss);
