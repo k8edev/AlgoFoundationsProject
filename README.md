@@ -1,22 +1,29 @@
-# algofoundations_clojure
+# Runtime Comparison of Recursive and Iterative Algorithms 
 
-A Clojure library designed to ... well, that part is up to you.
+## Structure
+
+This project contains 2 modules:
+
+**AlgoFoundationsProject**
+
+Contains _Java_ source code for the recursive and iterative implementations of
+1. Factorial
+2. Fibonacci
+3. Towers Of Hanoi
+
+Contains a Java Swing GUI that allows users to call the functions using a user-provided input value.
+
+**AlgoFoundationsClojure**
+
+Contains _Clojure_ source code for the recursive implementations of
+1. Factorial
+2. Fibonacci
+
 
 ## Usage
+The GUI can be run by calling GUI.main() in an IDE of your choice.
 
-FIXME
-
-## License
-
-Copyright © 2021 FIXME
-
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
-
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+The Clojure functions can be run from a Clojure REPL, using the following commands
+1. Open the Clojure REPL in your IDE.
+2. Import the namespace. E.g. `(require 'src.clojuredemo.core)`
+3. Call the function. E.g. `(src.clojuredemo.core/tail-recursive-fibonacci 6)`
