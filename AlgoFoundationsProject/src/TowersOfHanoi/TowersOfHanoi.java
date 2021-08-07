@@ -1,5 +1,5 @@
 package TowersOfHanoi;
 
 public interface TowersOfHanoi {
-    int numOfMoves(int numDiscs, boolean printSteps);
+    int numOfMoves(int numDiscs, boolean printSteps, boolean printFinal);
 }

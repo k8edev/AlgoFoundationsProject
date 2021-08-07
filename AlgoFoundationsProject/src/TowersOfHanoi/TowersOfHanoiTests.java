@@ -30,7 +30,7 @@ public class TowersOfHanoiTests {
         /* Test bench */
         int[] discs = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,100};
         for(int i: discs) {
-            int answer = towersOfHanoi.numOfMoves(i, false);
+            int answer = towersOfHanoi.numOfMoves(i, false, false);
             System.out.println(" Discs " + i + " Moves " + answer);
             if (answer != (Math.pow(2,i)-1)) {
                 throw new RuntimeException(" Incorrect Output from Hanoi algorithm");
@@ -38,8 +38,27 @@ public class TowersOfHanoiTests {
         }
     }
 
+    @Test
+    public void towersOfHanoi_printsSteps_for15disks() {
+        // Act
+        towersOfHanoi.numOfMoves(15, true, false);
+
+        // Assert
+        // Check console, or add Assert once recursive solution supports printing steps
+    }
+
+    @Test
+    public void towersOfHanoi_printsResult_for15disks() {
+        // Act
+        towersOfHanoi.numOfMoves(15, false, true);
+
+        // Assert
+        // Check console, or add Assert once recursive solution supports printing steps
+    }
+
     @Test(expected = RuntimeException.class)
     public void towersOfHanoi_throwsException_whenNotEnoughDisks() {
-       towersOfHanoi.numOfMoves(0, false);
+        // Act & Assert
+        towersOfHanoi.numOfMoves(0, false, false);
     }
 }
