@@ -84,9 +84,9 @@ public class FactorialTests {
     @Test
     public void findFactorial_Succeeds_IfNumberIsLarge() {
         // Act
-        double result = factorial.findFactorial(15);
+        double result = factorial.findFactorial(20);
 
         // Assert
-        assertEquals(1307674368000.0, result, precisionLoss);
+        assertEquals(2432902008176640000.0, result, precisionLoss);
     }
 }
