@@ -1,14 +1,17 @@
-package GUI;
+package project;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-
-import Fibonacci.Fibonnaci;
+import project.Function;
+import project.Fibonnaci;
+import project.GUIFactorial;
+import project.GUIToH;
 
 import javax.swing.*;
 
@@ -82,6 +85,12 @@ public class GUI {
 	                	recurTime.setText("");
 	                	skip = true; 
 	                }
+	                if (inputVal < 0) {
+	                	skip = true; 
+	                	outputAns.setText(" Input cannot be a negative number"); 
+	                	iterTime.setText("");
+	                	recurTime.setText("");
+	                }
 	                if (skip == false) {
 	                	double iterAns = 0;
 	                	long iterDuration = 0; 
@@ -136,6 +145,7 @@ public class GUI {
 		packages = new ArrayList<Class>();
 		packages.add(Fibonnaci.class);
 		packages.add(GUIFactorial.class);
+		packages.add(GUIToH.class);
 		setupFunctions();
 		runGUI();
 	}
