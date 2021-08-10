@@ -1,15 +1,12 @@
+/target
 /classes
 /checkouts
 profiles.clj
 pom.xml
 pom.xml.asc
+*.jar
 *.class
 /.lein-*
-*.lein-*
 /.nrepl-port
-*.nrepl-port
 .hgignore
-*.hgignore
 .hg/
-.idea/*
-*/.idea/*
