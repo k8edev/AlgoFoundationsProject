@@ -1,4 +1,4 @@
-package project;
+package GUI;
 import java.util.Stack;
 
 public class GUIToH {
