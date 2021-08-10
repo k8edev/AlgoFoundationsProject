@@ -1,17 +1,14 @@
-package project;
+package GUI;
+import Fibonacci.Fibonnaci;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-import project.Function;
-import project.Fibonnaci;
-import project.GUIFactorial;
-import project.GUIToH;
 
 import javax.swing.*;
 
